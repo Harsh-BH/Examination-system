@@ -1,5 +1,4 @@
-// src/pages/Login/LoginPage.jsx
-
+// src/Pages/Login/LoginPage.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -7,14 +6,14 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
-import { auth, db } from "../../firebaseConfig"; // Import Firebase Auth and Firestore instances
+import { auth, db } from "../../firebaseConfig";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
-  const [isSignUp, setIsSignUp] = useState(true); // State to toggle between sign-up and login
+  const [isSignUp, setIsSignUp] = useState(true);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -23,7 +22,6 @@ const LoginPage = () => {
 
     try {
       if (isSignUp) {
-        // Sign-up
         const userCredential = await createUserWithEmailAndPassword(
           auth,
           email,
@@ -32,13 +30,11 @@ const LoginPage = () => {
         const user = userCredential.user;
         console.log("User signed up:", user.uid);
 
-        // Add user details to Firestore
         try {
           const userDocRef = await addDoc(collection(db, "users"), {
             uid: user.uid,
             email: user.email,
             displayName: displayName,
-            // Add more user details as needed
           });
           console.log("User added to Firestore:", userDocRef.id);
         } catch (firestoreError) {
@@ -46,7 +42,6 @@ const LoginPage = () => {
           setError(firestoreError.message);
         }
       } else {
-        // Login
         const userCredential = await signInWithEmailAndPassword(
           auth,
           email,
@@ -56,8 +51,7 @@ const LoginPage = () => {
         console.log("User logged in:", user.uid);
       }
 
-      // Redirect to dashboard upon successful sign-up or login
-      navigate("/dashboard");
+      navigate("/start-paper");
     } catch (authError) {
       console.error("Authentication error:", authError.message);
       setError(authError.message);

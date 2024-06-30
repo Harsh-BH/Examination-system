@@ -30,14 +30,6 @@ const DashboardLayout = () => {
       </aside>
       <main className="main-content">
         <div className="main-container">
-          <header className="main-header">
-            <h1>{/* This can be dynamic if needed */}</h1>
-            <div className="header-icons">
-              <FaUser />
-              <FaDollarSign />
-              <FaShoppingCart />
-            </div>
-          </header>
           <section className="content">
             <Outlet />
           </section>
