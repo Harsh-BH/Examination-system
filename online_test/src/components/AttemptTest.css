@@ -1,24 +1,23 @@
 /* src/components/AttemptTest.css */
 .attempt-test-container {
-  max-width: 800px;
-  margin: 0 auto;
   padding: 20px;
   background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .attempt-test-container h2 {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .attempt-test-container p {
   font-size: 16px;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .question-container {
@@ -27,6 +26,7 @@
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 5px;
+  width: 100%;
 }
 
 .question-text {
@@ -35,51 +35,47 @@
   margin-bottom: 10px;
 }
 
+.options-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .option-container {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.option-container input[type="radio"] {
+.option-container input {
   margin-right: 10px;
 }
 
-.option-container label {
-  font-size: 16px;
-}
-
 .submit-button {
-  display: block;
-  width: 100%;
-  padding: 10px 20px;
   background-color: #007bff;
-  border: none;
   color: white;
+  padding: 10px 20px;
+  border: none;
   border-radius: 5px;
-  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
 }
 
 .submit-button:hover {
   background-color: #0056b3;
-  transform: scale(1.05);
 }
 
-@media (max-width: 600px) {
-  .attempt-test-container {
-    padding: 10px;
-  }
+.question-type {
+  font-size: 14px;
+  font-style: italic;
+  color: #6c757d;
+  margin-top: 10px;
+}
 
-  .attempt-test-container h2,
-  .attempt-test-container p,
-  .question-text,
-  .option-container label {
-    font-size: 14px;
-  }
-
-  .submit-button {
-    font-size: 14px;
-  }
+form {
+  width: 100%;
+  max-width: 800px; /* Set a maximum width for the form */
 }

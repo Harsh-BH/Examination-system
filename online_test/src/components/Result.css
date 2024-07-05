@@ -1,0 +1,25 @@
+/* src/components/Result.css */
+.result-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.chart {
+  width: 45%;
+}
+
+.summary {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.summary p {
+  margin: 5px 0;
+}

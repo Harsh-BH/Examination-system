@@ -11,9 +11,9 @@ import CreateTest from "./components/CreateTest";
 import CreateQuestion from "./components/CreateQuestion";
 import AttemptTest from "./components/AttemptTest";
 import TestDetails from "./components/TestDetails";
+import Result from "./components/Result";
 import TeacherLayout from "./components/TeacherLayout";
 import StudentLayout from "./components/StudentLayout";
-import Profile from "./components/Profile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
@@ -24,21 +24,16 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
-        {/* Teacher Layout */}
-        <Route element={<TeacherLayout />}>
+        <Route path="/" element={<TeacherLayout />}>
           <Route path="/dashboard" element={<TeacherDashboard />} />
           <Route path="/create-test" element={<CreateTest />} />
           <Route path="/create-question/:testId" element={<CreateQuestion />} />
           <Route path="/test-details/:testId" element={<TestDetails />} />
-          <Route path="/teacher-profile" element={<Profile />} />
         </Route>
-
-        {/* Student Layout */}
-        <Route element={<StudentLayout />}>
+        <Route path="/" element={<StudentLayout />}>
           <Route path="/student-dashboard" element={<StudentDashboard />} />
           <Route path="/attempt-test/:testId" element={<AttemptTest />} />
-          <Route path="/student-profile" element={<Profile />} />
+          <Route path="/result/:testId" element={<Result />} />
         </Route>
       </Routes>
     </Router>

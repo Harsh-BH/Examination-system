@@ -37,7 +37,7 @@ const StudentDashboard = () => {
 
   return (
     <div>
-      <h2>Student Dashboard</h2>
+      <h2>Test Paper</h2>
       <button onClick={handleLogout} className="btn btn-danger mb-3">
         Logout
       </button>
