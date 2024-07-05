@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "pdf-lib": "^1.17.1",
-    "react-router-dom": "^6.24.0"
-  }
-}
