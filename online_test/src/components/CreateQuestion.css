@@ -1,0 +1,98 @@
+/* src/components/CreateQuestion.css */
+.create-question-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-question-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.create-question-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-question-form input,
+.create-question-form select,
+.create-question-form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create-question-form textarea {
+  resize: vertical;
+}
+
+.create-question-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.create-question-form button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.option-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.option-container input[type="text"] {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 80vmax;
+}
+
+.option-container input[type="checkbox"] {
+  margin-left: 10px;
+}
+
+@media (max-width: 80vmax) {
+  .create-question-container {
+    padding: 10px;
+  }
+
+  .create-question-form input,
+  .create-question-form select,
+  .create-question-form textarea,
+  .create-question-form button {
+    font-size: 14px;
+  }
+
+  .option-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .option-container input[type="text"] {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+}
